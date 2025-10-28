@@ -1,0 +1,11 @@
+# Compiled class files 
+build/ 
+*.class 
+ 
+# NetBeans project files 
+nbproject/private/ 
+ 
+# Other temporary files 
+*.log 
+*.tmp 
+.DS_Store 
