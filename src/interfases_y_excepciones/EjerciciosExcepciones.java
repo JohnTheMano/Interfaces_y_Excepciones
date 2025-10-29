@@ -80,7 +80,26 @@ public class EjerciciosExcepciones {
         } catch (EdadInvalidaException e) {
              System.out.println("Error: " + e.getMessage());
         }
-          
+                //5. Uso de try-with-resources
+        //  Leer un archivo con BufferedReader usando try-with-resources. Manejar IOException correctamente.
+
+        System.out.println("\n\n5. Uso de try-with-resources\n" +
+                "Leer un archivo con BufferedReader usando try-with-resources. Manejar IOException correctamente.");
+        System.out.println("Ingrese el nombre del archivo (ej: archivo.txt):");
+
+        String nombreArchivo = sc.next(); // usamos el mismo Scanner sc
+        File archivoTry = new File(nombreArchivo);
+
+        // try-with-resources: el BufferedReader se cierra automáticamente
+        try (java.io.BufferedReader br = new java.io.BufferedReader(new java.io.FileReader(archivoTry))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                System.out.println(linea);
+            }
+        } catch (java.io.IOException ex) {
+            System.out.println("Error de E/S: " + ex.getMessage());
+        }
+  
         
     }
     
@@ -106,6 +125,8 @@ public class EjerciciosExcepciones {
         }
                 
         } 
+     
+        
 }
     
         
